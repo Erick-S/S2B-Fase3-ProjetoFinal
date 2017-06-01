@@ -10,12 +10,10 @@ namespace Mobius.Models
     {
         //FK from ApplicationUser
         public string Email { get; set; }
-        //Object reference to ApplicationUser?
-        //public virtual ApplicationUser User { get; set; }
 
         [Range(0, 10)]
         public int Rating { get; set; }
 
-        public virtual ICollection<Product> Products { get; set; }
+        //public virtual ICollection<Product> Products { get; set; }
     }
 }

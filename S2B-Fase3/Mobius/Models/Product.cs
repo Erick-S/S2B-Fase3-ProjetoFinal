@@ -53,10 +53,8 @@ namespace Mobius.Models
         public string ImageUrl { get; set; }
 
         public int CategoryID { get; set; }
-        public virtual Category Category { get; set; }
 
         public string UserEmail { get; set; }
-        public virtual ApplicationUser User { get; set; }
     }
 
     public enum Status

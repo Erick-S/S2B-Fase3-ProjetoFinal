@@ -17,8 +17,7 @@ namespace Mobius.Controllers
         // GET: Product
         public ActionResult Index()
         {
-            var products = db.Products.Include(p => p.Category);
-            return View(products.ToList());
+            return View(db.Products.ToList());
         }
 
         // GET: Product/Details/5
@@ -39,16 +38,15 @@ namespace Mobius.Controllers
         // GET: Product/Create
         public ActionResult Create()
         {
-            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "Name");
             return View();
         }
 
         // POST: Product/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProductID,Title,Description,Cost,Address,PublishDate,ExpirationDate,Status,Rating,ImageFile,ImageMimeType,ImageUrl,CategoryID,UserID")] Product product)
+        public ActionResult Create([Bind(Include = "ProductID,Title,Description,Cost,Address,PublishDate,ExpirationDate,Status,Rating,ImageFile,ImageMimeType,ImageUrl,CategoryID,UserEmail")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +55,6 @@ namespace Mobius.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "Name", product.CategoryID);
             return View(product);
         }
 
@@ -73,16 +70,15 @@ namespace Mobius.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "Name", product.CategoryID);
             return View(product);
         }
 
         // POST: Product/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProductID,Title,Description,Cost,Address,PublishDate,ExpirationDate,Status,Rating,ImageFile,ImageMimeType,ImageUrl,CategoryID,UserID")] Product product)
+        public ActionResult Edit([Bind(Include = "ProductID,Title,Description,Cost,Address,PublishDate,ExpirationDate,Status,Rating,ImageFile,ImageMimeType,ImageUrl,CategoryID,UserEmail")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +86,6 @@ namespace Mobius.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "Name", product.CategoryID);
             return View(product);
         }
 
