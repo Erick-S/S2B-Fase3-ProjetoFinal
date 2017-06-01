@@ -55,7 +55,7 @@ namespace Mobius.Models
         public int CategoryID { get; set; }
         public virtual Category Category { get; set; }
 
-        public string UserID { get; set; }
+        public string UserEmail { get; set; }
         public virtual ApplicationUser User { get; set; }
     }
 
