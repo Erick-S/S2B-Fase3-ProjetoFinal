@@ -14,6 +14,8 @@ namespace Mobius.Models
         [Range(0, 10)]
         public int Rating { get; set; }
 
+        //+Imagem do User?
+
         //public virtual ICollection<Product> Products { get; set; }
     }
 }

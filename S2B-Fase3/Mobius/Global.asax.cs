@@ -18,7 +18,6 @@ namespace Mobius
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            //Database.SetInitializer(new UserInitializer()); /*Correto? Não? Se não, como proceder?*/
             Database.SetInitializer(new ProductInitializer());
         }
     }

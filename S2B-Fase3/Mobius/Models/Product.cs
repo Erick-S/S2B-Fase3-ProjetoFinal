@@ -8,23 +8,28 @@ namespace Mobius.Models
 {
     public class Product
     {
+        [Display(Name = "ID de Produto")]
         [Key]
         public int ProductID { get; set; }
 
+        [Display(Name = "Anúncio")]
         [Required]
         [StringLength(100)]
         public string Title { get; set; }
 
+        [Display(Name = "Descrição")]
         [Required]
         [DataType(DataType.MultilineText)]
         [StringLength(140)]
         public string Description { get; set; }
 
+        [Display(Name = "Preço")]
         [Required]
         [DataType(DataType.Currency)]
         [Range(typeof(decimal), "0", "500")]
         public decimal Cost { get; set; }
 
+        [Display(Name = "Endereço")]
         [Required]
         public string Address { get; set; }
 
@@ -38,9 +43,11 @@ namespace Mobius.Models
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = false)]
         public DateTime ExpirationDate { get; set; }
 
+        [Display(Name = "Status do Anúncio")]
         [DataType(DataType.Text)]
         public Status Status { get; set; }
 
+        [Display(Name = "Avaliação")]
         [Range(0,5)]
         public int Rating { get; set; }
 
@@ -52,8 +59,11 @@ namespace Mobius.Models
         [DataType(DataType.ImageUrl)]
         public string ImageUrl { get; set; }
 
+        [Display(Name = "Categoria")]
         public int CategoryID { get; set; }
+        //+Nome da Categoria?
 
+        [Display(Name = "Email do Publicador")]
         public string UserEmail { get; set; }
     }
 
