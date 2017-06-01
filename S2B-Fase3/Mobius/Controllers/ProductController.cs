@@ -39,7 +39,7 @@ namespace Mobius.Controllers
         // GET: Product/Create
         public ActionResult Create()
         {
-            ViewBag.CategoryID = new SelectList(db.Categories, "ID", "Name");
+            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "Name");
             return View();
         }
 
@@ -48,7 +48,7 @@ namespace Mobius.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Title,Description,Cost,Address,PublishDate,ExpirationDate,Status,Rating,ImageFile,ImageMimeType,ImageUrl,CategoryID,UserID")] Product product)
+        public ActionResult Create([Bind(Include = "ProductID,Title,Description,Cost,Address,PublishDate,ExpirationDate,Status,Rating,ImageFile,ImageMimeType,ImageUrl,CategoryID,UserID")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +57,7 @@ namespace Mobius.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CategoryID = new SelectList(db.Categories, "ID", "Name", product.CategoryID);
+            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "Name", product.CategoryID);
             return View(product);
         }
 
@@ -73,7 +73,7 @@ namespace Mobius.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CategoryID = new SelectList(db.Categories, "ID", "Name", product.CategoryID);
+            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "Name", product.CategoryID);
             return View(product);
         }
 
@@ -82,7 +82,7 @@ namespace Mobius.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Title,Description,Cost,Address,PublishDate,ExpirationDate,Status,Rating,ImageFile,ImageMimeType,ImageUrl,CategoryID,UserID")] Product product)
+        public ActionResult Edit([Bind(Include = "ProductID,Title,Description,Cost,Address,PublishDate,ExpirationDate,Status,Rating,ImageFile,ImageMimeType,ImageUrl,CategoryID,UserID")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace Mobius.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CategoryID = new SelectList(db.Categories, "ID", "Name", product.CategoryID);
+            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "Name", product.CategoryID);
             return View(product);
         }
 

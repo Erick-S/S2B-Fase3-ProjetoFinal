@@ -9,7 +9,7 @@ namespace Mobius.Models
     public class Product
     {
         [Key]
-        public int ID { get; set; }
+        public int ProductID { get; set; }
 
         [Required]
         [StringLength(100)]
@@ -55,8 +55,8 @@ namespace Mobius.Models
         public int CategoryID { get; set; }
         public virtual Category Category { get; set; }
 
-        public int UserID { get; set; }
-        //public virtual ApplicationUser User { get; set; }
+        public string UserID { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 
     public enum Status

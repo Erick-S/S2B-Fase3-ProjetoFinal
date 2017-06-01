@@ -12,7 +12,17 @@ namespace Mobius.Models
     public class ApplicationUser : IdentityUser
     {
         [Display(Name = "Name")]
-        public string FullName { get; set; }
+        public override string UserName
+        {
+            get
+            {
+                return base.UserName;
+            }
+            set
+            {
+                base.UserName = value;
+            }
+        }
 
         [Range(0, 10)]
         public int Rating { get; set; }

@@ -9,7 +9,7 @@ namespace Mobius.Models
     public class Category
     {
         [Key]
-        public int ID { get; set; }
+        public int CategoryID { get; set; }
 
         [Required]
         [StringLength(50)]

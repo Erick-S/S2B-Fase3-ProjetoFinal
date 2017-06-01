@@ -1,4 +1,4 @@
-﻿using MvcMovie.Models;
+﻿using Mobius.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -18,6 +18,7 @@ namespace Mobius
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            //Database.SetInitializer(new UserInitializer()); /*Correto? Não? Se não, como proceder?*/
             Database.SetInitializer(new ProductInitializer());
         }
     }
