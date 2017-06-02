@@ -16,18 +16,8 @@ namespace Mobius.Migrations
 
         protected override void Seed(ApplicationDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            System.Diagnostics.Debug.WriteLine("Will it work??"); //Seed method -> Nuget Console -> Update-Database !!
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
             var hasher = new PasswordHasher();
             context.Users.AddOrUpdate(
                 u => u.UserName,
@@ -64,6 +54,8 @@ namespace Mobius.Migrations
                     SecurityStamp = Guid.NewGuid().ToString()
                 }
             );
+
+            context.SaveChanges();
         }
     }
 }

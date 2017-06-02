@@ -6,16 +6,24 @@ using System.Web;
 
 namespace Mobius.Models
 {
-    public class MyProfile
+    //Extends from current user class?
+    public class MyProfile /*: ApplicationUser*/
     {
-        //FK from ApplicationUser
+        //FK from ApplicationUser?
+        [Display(Name = "E-Mail")]
         public string Email { get; set; }
 
+        [Display(Name = "Avaliação")]
         [Range(0, 10)]
         public int Rating { get; set; }
 
-        //+Imagem do User?
+        //Profile image (Upload or Link)
+        [Display(Name = "Upload Image")]
+        public byte[] ImageFile { get; set; }
+        public string ImageMimeType { get; set; }
 
-        //public virtual ICollection<Product> Products { get; set; }
+        [Display(Name = "Image Link")]
+        [DataType(DataType.ImageUrl)]
+        public string ImageUrl { get; set; }
     }
 }

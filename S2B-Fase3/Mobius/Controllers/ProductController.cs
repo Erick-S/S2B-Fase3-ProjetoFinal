@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using Mobius.Models;
 
+//User.Identity.Name -> fetchs user identity...
+
 namespace Mobius.Controllers
 {
     public class ProductController : Controller

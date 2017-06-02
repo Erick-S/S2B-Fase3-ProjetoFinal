@@ -13,7 +13,8 @@ namespace Mobius.Models
      {
         protected override void Seed(ProductDbContext context)
         {
-             var categories = new List<Category>
+            System.Diagnostics.Debug.WriteLine("This is being seeded in the database...?"); //Products & Cateories are being seeded!
+            var categories = new List<Category>
              {
                 new Category { Name = "Roupas", Description = "Vestimentas de todos os tipos." },
                 new Category { Name = "Acessórios", Description = "Acessórios pessoais." },
