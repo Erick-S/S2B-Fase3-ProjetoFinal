@@ -9,7 +9,7 @@ using System.Web;
 
 namespace Mobius.Models
 {
-     public class ProductInitializer : System.Data.Entity.DropCreateDatabaseAlways<ProductDbContext>
+     public class ProductInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<ProductDbContext>
      {
         protected override void Seed(ProductDbContext context)
         {

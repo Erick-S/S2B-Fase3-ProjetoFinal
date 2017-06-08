@@ -1,0 +1,51 @@
+﻿@model Mobius.Models.Product
+
+@* TODO Review this partial view *@
+
+<div class="panel panel-primary">
+
+    <div class="panel-body">
+        <h5>@Model.Title</h5>
+        <h6>TesteID: @Model.ProductID</h6>
+
+        <p>@Model.Status</p>
+
+        <img width="200" src="@Url.Action("GetImage", "Product", new { id = Model.ProductID })" alt="@Model.Title , Imagem" />
+        @if (Model.ImageUrl != null)
+        {
+            <img width="200" src="@Model.ImageUrl" alt="@Model.Title , Imagem" />
+        }
+
+        <p>@Model.Description</p>
+
+        <p>@Model.Cost</p>
+
+        <p>@Model.Address</p>
+
+        <p>@Model.PublishDate.ToString(string.Format("dd/MM/yyyy"))</p>
+
+        <p>@Model.ExpirationDate.ToString(string.Format("dd/MM/yyyy"))</p>
+    </div>
+
+    <div class="panel-footer">
+        <p>Por: @Model.UserEmail</p>
+        <p>Categoria: @Model.Category.Name</p>
+
+        @if(User.Identity.Name == Model.UserEmail)
+        {
+            @Html.ActionLink("Cancelar Anúncio", "Cancel", new { id = Model.ProductID }, new { @class = "btn btn-danger btn-sm" });
+            @Html.ActionLink("Editar Anúncio", "Edit", new { id = Model.ProductID }, new { @class = "btn btn-info btn-sm"})
+            //The creator
+            //EDIT
+            //CONTACT -> View Messages...
+            <p>I CREATED THIS</p>
+        }
+        else
+        {
+            //Not the creater
+            //BUY
+            //CONTACT -> Create Messages...
+            <p>I MAY BUY THIS</p>
+        }
+    </div>
+</div>

@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Mobius.Models.Product>
+
+@{
+    ViewBag.Title = "Visualizar seus Produtos";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-success" })
+</p>
+
+@foreach (var item in Model)
+{
+    @Html.Partial("_ProductFragment", item)
+}

@@ -1,12 +1,12 @@
 ﻿@model Mobius.Models.Product
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Cancel";
 }
 
-<h2>Delete</h2>
+<h2>Cancel</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Are you sure you want to ~Cancelar~ this?</h3>
 <div>
     <h4>Product</h4>
     <hr />
@@ -74,8 +74,8 @@
         <dd>
             @Html.DisplayFor(model => model.Rating)
         </dd>
-
-        <dt>
+        @* TODO Change to image tag *@
+        @*<dt>
             @Html.DisplayNameFor(model => model.ImageFile)
         </dt>
 
@@ -97,7 +97,7 @@
 
         <dd>
             @Html.DisplayFor(model => model.ImageUrl)
-        </dd>
+        </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.CategoryID)
@@ -121,7 +121,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <input type="submit" value="Cancelar" class="btn btn-danger" /> |
             @Html.ActionLink("Back to List", "Index")
         </div>
     }

@@ -23,7 +23,6 @@ namespace Mobius.Migrations
                 u => u.UserName,
                 new ApplicationUser
                 {
-                    Id = "ADM01",
                     Email = "admin@s2b.br",
                     UserName = "admin@s2b.br",
                     PasswordHash = hasher.HashPassword("s2b"),
@@ -31,7 +30,6 @@ namespace Mobius.Migrations
                 },
                 new ApplicationUser
                 {
-                    Id = "USR01",
                     Email = "hugo@s2b.br",
                     UserName = "hugo@s2b.br",
                     PasswordHash = hasher.HashPassword("s2b"),
@@ -39,7 +37,6 @@ namespace Mobius.Migrations
                 },
                 new ApplicationUser
                 {
-                    Id = "USR10",
                     Email = "ze@s2b.br",
                     UserName = "ze@s2b.br",
                     PasswordHash = hasher.HashPassword("s2b"),
@@ -47,7 +44,6 @@ namespace Mobius.Migrations
                 },
                 new ApplicationUser
                 {
-                    Id = "USR11",
                     Email = "luis@s2b.br",
                     UserName = "luis@s2b.br",
                     PasswordHash = hasher.HashPassword("s2b"),

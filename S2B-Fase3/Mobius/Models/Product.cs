@@ -59,17 +59,21 @@ namespace Mobius.Models
         [DataType(DataType.ImageUrl)]
         public string ImageUrl { get; set; }
 
-        [Display(Name = "Categoria")]
         public int CategoryID { get; set; }
-        //+Nome da Categoria?
+        public virtual Category Category { get; set; }
 
         [Display(Name = "Email do Publicador")]
         public string UserEmail { get; set; }
+
+        //Sets an buyer...
+        [Display(Name = "Email do Comprador")]
+        public string BuyerEmail { get; set; }
     }
 
     public enum Status
     {
         Open,
+        Expired,
         Negotiating,
         Donated,
         Cancelled,

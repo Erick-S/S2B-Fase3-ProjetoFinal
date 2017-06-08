@@ -199,8 +199,14 @@
     <Compile Include="Migrations\201706011955343_Initialization.Designer.cs">
       <DependentUpon>201706011955343_Initialization.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706071856175_MajorAlteration1.cs" />
+    <Compile Include="Migrations\201706071856175_MajorAlteration1.Designer.cs">
+      <DependentUpon>201706071856175_MajorAlteration1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Relatorio.cs" />
+    <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\MyProfile.cs" />
     <Compile Include="Models\ProductInitializer.cs" />
     <Compile Include="Models\Product.cs" />
@@ -269,10 +275,12 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Product\Create.cshtml" />
-    <Content Include="Views\Product\Delete.cshtml" />
+    <Content Include="Views\Product\Cancel.cshtml" />
     <Content Include="Views\Product\Details.cshtml" />
     <Content Include="Views\Product\Edit.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\_ProductFragment.cshtml" />
+    <Content Include="Views\Product\Browse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -296,6 +304,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706011955343_Initialization.resx">
       <DependentUpon>201706011955343_Initialization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706071856175_MajorAlteration1.resx">
+      <DependentUpon>201706071856175_MajorAlteration1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
