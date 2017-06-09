@@ -17,12 +17,14 @@ namespace Mobius.Models
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = false)]
         public DateTime CommentDate { get; set; }
 
-        [StringLength(300)]
+        [StringLength(1500)]
         public string Comentario { get; set; }
 
-        [StringLength(300)]
+        [StringLength(1500)]
         public string Resposta { get; set; }
 
         public string UserEmail { get; set; }
+
+        public string AnnouncerEmail { get; set; }
     }
 }

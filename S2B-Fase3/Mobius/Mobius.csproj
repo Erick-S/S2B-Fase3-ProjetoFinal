@@ -183,15 +183,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionFilters\RatingActionFilter.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Extensions\IdentityExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -202,6 +205,22 @@
     <Compile Include="Migrations\201706071856175_MajorAlteration1.cs" />
     <Compile Include="Migrations\201706071856175_MajorAlteration1.Designer.cs">
       <DependentUpon>201706071856175_MajorAlteration1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706081750105_MinorAlteration1.cs" />
+    <Compile Include="Migrations\201706081750105_MinorAlteration1.Designer.cs">
+      <DependentUpon>201706081750105_MinorAlteration1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706090217004_UserExtension1.cs" />
+    <Compile Include="Migrations\201706090217004_UserExtension1.Designer.cs">
+      <DependentUpon>201706090217004_UserExtension1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706090325419_MinorAlteration2.cs" />
+    <Compile Include="Migrations\201706090325419_MinorAlteration2.Designer.cs">
+      <DependentUpon>201706090325419_MinorAlteration2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706091410089_MinorAlteration3.cs" />
+    <Compile Include="Migrations\201706091410089_MinorAlteration3.Designer.cs">
+      <DependentUpon>201706091410089_MinorAlteration3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -281,6 +300,18 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Product\_ProductFragment.cshtml" />
     <Content Include="Views\Product\Browse.cshtml" />
+    <Content Include="Views\Product\_RelatorioFragment.cshtml" />
+    <Content Include="Views\Product\Relatorios.cshtml" />
+    <Content Include="Views\Product\Donate.cshtml" />
+    <Content Include="Views\Product\Negotiate.cshtml" />
+    <Content Include="Views\Product\SellTo.cshtml" />
+    <Content Include="Views\Product\Negotiations.cshtml" />
+    <Content Include="Views\Product\Rate.cshtml" />
+    <Content Include="Views\Comment\Create.cshtml" />
+    <Content Include="Views\Comment\Delete.cshtml" />
+    <Content Include="Views\Comment\Details.cshtml" />
+    <Content Include="Views\Comment\Edit.cshtml" />
+    <Content Include="Views\Comment\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -307,6 +338,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706071856175_MajorAlteration1.resx">
       <DependentUpon>201706071856175_MajorAlteration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706081750105_MinorAlteration1.resx">
+      <DependentUpon>201706081750105_MinorAlteration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706090217004_UserExtension1.resx">
+      <DependentUpon>201706090217004_UserExtension1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706090325419_MinorAlteration2.resx">
+      <DependentUpon>201706090325419_MinorAlteration2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706091410089_MinorAlteration3.resx">
+      <DependentUpon>201706091410089_MinorAlteration3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

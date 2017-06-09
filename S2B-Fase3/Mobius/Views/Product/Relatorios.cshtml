@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Mobius.Models.Relatorio>
+
+@{
+    ViewBag.Title = "Relatorios";
+}
+
+<h2>Relatorios</h2>
+
+<table class="table table-hover table-striped table-responsive">
+    <thead>
+        <tr>
+            <th>#</th>
+
+            <th>Data</th>
+
+            <th>Usuário</th>
+
+            <th>Controller</th>
+
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            @Html.Partial("_RelatorioFragment", item)
+        }
+    </tbody>
+</table>

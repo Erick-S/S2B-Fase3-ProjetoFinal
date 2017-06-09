@@ -1,0 +1,133 @@
+﻿@model Mobius.Models.Product
+
+@{
+    ViewBag.Title = "Rate";
+}
+
+<h2>Avaliar</h2>
+@using (Html.BeginForm("Rate", "Product"))
+{
+    @Html.AntiForgeryToken()
+    <div>
+        <h4>Avalie este produto</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Category.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Category.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Cost)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Cost)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PublishDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PublishDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ExpirationDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ExpirationDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Status)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Rating)
+            </dt>
+
+            <dd>
+                <input type="number" name="rating" class="form-control col-md-2" min="0" max="5" />
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ImageFile)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ImageFile)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ImageMimeType)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ImageMimeType)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ImageUrl)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UserEmail)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserEmail)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BuyerEmail)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BuyerEmail)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        <input type="submit" value="Avaliar" class="btn btn-success"/>
+        @Html.ActionLink("Voltar para suas compras", "Negotiations")
+    </p>
+}

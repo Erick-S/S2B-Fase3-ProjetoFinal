@@ -31,21 +31,62 @@
         <p>Por: @Model.UserEmail</p>
         <p>Categoria: @Model.Category.Name</p>
 
-        @if(User.Identity.Name == Model.UserEmail)
+        @if (User.Identity.Name == Model.UserEmail)
         {
-            @Html.ActionLink("Cancelar Anúncio", "Cancel", new { id = Model.ProductID }, new { @class = "btn btn-danger btn-sm" });
-            @Html.ActionLink("Editar Anúncio", "Edit", new { id = Model.ProductID }, new { @class = "btn btn-info btn-sm"})
-            //The creator
-            //EDIT
+            <div class="btn-group btn-group-sm btn-group-justified">
+                @if (Model.Status == Mobius.Models.Status.Open)
+                {
+                    @Html.ActionLink("Cancelar Anúncio", "Cancel", new { id = Model.ProductID }, new { @class = "btn btn-danger btn-sm" })
+                    @Html.ActionLink("Editar Anúncio", "Edit", new { id = Model.ProductID }, new { @class = "btn btn-primary btn-sm" })
+                }
+                else if (Model.Status == Mobius.Models.Status.Expired)
+                {
+                    @Html.ActionLink("Doar Produto", "Donate", new { id = Model.ProductID }, new { @class = "btn btn-info btn-sm" })
+                    @Html.ActionLink("Cancelar Anúncio", "Cancel", new { id = Model.ProductID }, new { @class = "btn btn-danger btn-sm" })
+                }
+                else if (Model.Status == Mobius.Models.Status.Negotiating)
+                {
+                    @Html.ActionLink("Confirmar Venda", "SellTo", new { id = Model.ProductID }, new { @class = "btn btn-success btn-sm" })
+                    @Html.ActionLink("Cancelar Anúncio", "Cancel", new { id = Model.ProductID }, new { @class = "btn btn-danger btn-sm" })
+                }
+
+                @Html.ActionLink("Perguntas", "Index", "Comment", new { @class = "btn btn-info btn-sm" })
+            </div>
             //CONTACT -> View Messages...
             <p>I CREATED THIS</p>
         }
+        else if (User.Identity.Name == Model.BuyerEmail)
+        {
+            if (Model.Status == Mobius.Models.Status.Sold && Model.Rated == true)
+            {
+                <strong>Voce avaliou este produto com @Model.Rating pontos</strong>
+            }
+            <div class="btn-group btn-group-sm btn-group-justified">
+                @if (Model.Status == Mobius.Models.Status.Sold && Model.Rated == false)
+                {
+                    @Html.ActionLink("Avaliar", "Rate", "Product", new { id = Model.ProductID }, new { @class = "btn btn-success btn-sm" });
+                }
+                @Html.ActionLink("Contatar o Vendedor", "Create", "Comment", new { id = Model.ProductID, productName = Model.Title, announcerEmail = Model.UserEmail }, new { @class = "btn btn-info btn-sm" })
+            </div>
+            <p>I AM NEGOTIATING THIS / I BOUGHT THIS</p>
+        }
         else
         {
-            //Not the creater
-            //BUY
+            //Not the creator
             //CONTACT -> Create Messages...
+            <div class="btn-group btn-group-sm btn-group-justified">
+                @Html.ActionLink("Comprar", "Negotiate", new { id = Model.ProductID }, new { @class = "btn btn-success btn-sm" })
+                @Html.ActionLink("Contatar o Vendedor", "Create", "Comment", new { id = Model.ProductID, productName = Model.Title }, new { @class = "btn btn-info btn-sm" })
+            </div>
             <p>I MAY BUY THIS</p>
+        }
+
+
+        @if(User.Identity.Name == "admin@s2b.br")
+        {
+            <div class="btn-group btn-group-sm btn-group-justified">
+            </div>
+            <p>I MAY ADMINISTRATE THIS</p>
         }
     </div>
 </div>

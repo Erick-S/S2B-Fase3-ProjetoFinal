@@ -7,35 +7,60 @@
 
 <p class="text-success">@ViewBag.StatusMessage</p>
 <div>
+    <h4>Sua Reputação @using Mobius.Extensions{ @User.Identity.GetRating() }</h4>
     <h4>Change your account settings</h4>
     <hr />
     <dl class="dl-horizontal">
 
         @*Inserting a link to manage products...*@
-        @if(User.Identity.Name == "admin@s2b.br")
+        @if (User.Identity.Name == "admin@s2b.br")
         {
             // Admin buttons...
             <dt>Checar produtos para doação:</dt>
-            <dd>@Html.ActionLink("Checar Produtos", "CheckExpirationDate", "Product")</dd>
+            <dd>@Html.ActionLink("Checar Produtos", "CheckExpirationDate", "Product", null, new { @class = "btn btn-primary btn-sm" })</dd>
+
+            <hr />
 
             <dt>Estatísticas:</dt>
             <dd>//TESTE</dd>
 
+            <hr />
+
             <dt>Visualizar vendedores:</dt>
             <dd>//TESTE</dd>
 
+            <hr />
+
             <dt>Logs:</dt>
-            <dd>//TESTE</dd>
+            <dd>@Html.ActionLink("Visualizar", "Relatorios", "Product", null, new { @class = "btn btn-primary btn-sm" })</dd>
+
+            <hr />
 
             <dt>Criar Categoria:</dt>
             <dd>//TESTE</dd>
+       
         }
+        <hr />
         @*User Buttons...*@
         <dt>Criar Produto:</dt>
-        <dd>@Html.ActionLink("Novo Produto", "Create", "Product")</dd>
+        <dd>@Html.ActionLink("Novo Produto", "Create", "Product", null, new { @class = "btn btn-success btn-sm" })</dd>
+
+        <hr />
 
         <dt>Visualizar seus Produtos:</dt>
-        <dd>@Html.ActionLink("Visualizar", "Browse", "Product")</dd>
+        <dd>@Html.ActionLink("Visualizar", "Browse", "Product", null, new { @class = "btn btn-primary btn-sm" })</dd>
+
+        <hr />
+
+        <dt>Visualizar suas compras</dt>
+        <dd>@Html.ActionLink("Visualizar", "Negotiations", "Product", null, new { @class = "btn btn-primary btn-sm" })</dd>
+
+        <hr />
+
+        <dt>Visualizar Perguntas/Respostas</dt>
+        <dd>@Html.ActionLink("Visualizar", "Index", "Comment", null, new { @class = "btn btn-primary btn-sm" })</dd>
+
+        <hr />
 
         <dt>Password:</dt>
         <dd>

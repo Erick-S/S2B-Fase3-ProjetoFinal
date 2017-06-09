@@ -7,10 +7,17 @@
 <h2>@ViewBag.Title</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-success" })
+    @Html.ActionLink("Novo Produto", "Create", null, new { @class = "btn btn-success" })
 </p>
 
-@foreach (var item in Model)
+@if (Model.Count() < 1)
 {
-    @Html.Partial("_ProductFragment", item)
+    <strong>Você não possui nenhum produto cadastrado!</strong>
+}
+else
+{
+    foreach (var item in Model)
+    {
+        @Html.Partial("_ProductFragment", item)
+    }
 }

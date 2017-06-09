@@ -11,7 +11,11 @@ namespace Mobius.Models
         [Key]
         public int ID { get; set; }
 
-        public string Log { get; set; }
+        public string Controller { get; set; }
+
+        public string User { get; set; }
+
+        public string Action { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:u}")]

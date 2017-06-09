@@ -51,6 +51,8 @@ namespace Mobius.Models
         [Range(0,5)]
         public int Rating { get; set; }
 
+        public bool Rated { get; set; }
+
         [Display(Name = "Upload Image")]
         public byte[] ImageFile { get; set; }
         public string ImageMimeType { get; set; }

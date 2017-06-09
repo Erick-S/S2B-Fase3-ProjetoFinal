@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Mobius.Models.Product>
+
+@{
+    ViewBag.Title = "Negotiations";
+}
+
+<h2>Negociações</h2>
+
+@foreach (var item in Model)
+{
+    @Html.Partial("_ProductFragment", item)
+}
+
